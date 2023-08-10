@@ -1,0 +1,6 @@
+dvc
+zenml
+pandas
+ultralytics
+mlflow
+-e .
