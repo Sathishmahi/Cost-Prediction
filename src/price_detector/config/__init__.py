@@ -1,0 +1,1 @@
+from price_detector.config.configuration import Configuration

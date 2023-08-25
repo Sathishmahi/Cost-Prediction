@@ -1,0 +1,13 @@
+
+artifact:
+  root_dir: artifacts
+
+load_pretrain_model:
+  root_dir: load_pretrain_model
+  model_id: 1vgsgDqmC0CZG0uPwCJ9PHe7unxbPP5EP
+  model_name: best.pt
+
+vegi_detector:
+  root_dir: vegi_detector
+  input_img_file_name: input.jpg
+  crop_img_dir_name: crop_imgs

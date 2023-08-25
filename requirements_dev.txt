@@ -1,6 +1,7 @@
 dvc
-zenml
 pandas
 ultralytics
 mlflow
+pyyaml
+gdown
 -e .

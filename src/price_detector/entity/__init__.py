@@ -1,0 +1,1 @@
+from price_detector.entity.config_entity import *
