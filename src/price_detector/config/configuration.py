@@ -1,7 +1,7 @@
 import os
-from price_detector.entity import DownloadModelConfig,VegiDetectorConfig
+from price_detector.entity import DownloadModelConfig,VegiDetectorConfig,GetAreaConfig
 from price_detector.utils import read_yaml,make_dirs
-from price_detector.constant import DownloadModelKey,ArtifactKey,VegiDetectorKey
+from price_detector.constant import DownloadModelKey,ArtifactKey,VegiDetectorKey,GetAreaKey
 
 
 class Configuration:
@@ -13,7 +13,18 @@ class Configuration:
 
 
 
+    def get_area_config(self)->GetAreaConfig:
 
+        get_area_con  = self.config_content.get(GetAreaKey.GET_AREA_ROOT_KEY)
+        root_dir = os.path.join(self.artifact_root_dir,get_area_con.get(GetAreaKey.GET_AREA_ROOT_DIR_KEY))
+        canny_image_file_name =  os.path.join(root_dir,get_area_con.get(GetAreaKey.GET_AREA_CANNY_IMAGE_FILE_NAME_KEY))
+        dillate_image_file_name =  os.path.join(root_dir,get_area_con.get(GetAreaKey.GET_AREA_DIALLATE_IMAGE_FILE_NAME_KEY))
+        erode_image_file_name =  os.path.join(root_dir,get_area_con.get(GetAreaKey.GET_AREA_ERODE_IMAGE_FILE_NAME_KEY))
+        crop_images_dir_name = self.get_vegi_detector_config().crop_img_dir_name
+        
+        return GetAreaConfig(root_dir, canny_image_file_name, dillate_image_file_name, erode_image_file_name,crop_images_dir_name)
+    
+    
     def get_vegi_detector_config(self)->VegiDetectorConfig:
 
         vegit_detector_content  = self.config_content.get(VegiDetectorKey.VEGI_DETECTOR_ROOT_KEY)

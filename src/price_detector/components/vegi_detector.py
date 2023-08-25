@@ -12,7 +12,6 @@ class VegiDetect:
         self.crop_img_dir_name = self.vegi_detector_config.crop_img_dir_name
         self.input_img_file_name = self.vegi_detector_config.input_img_file_name
         self.model_path = self.vegi_detector_config.model_path
-        print(self.vegi_detector_config)
 
     @staticmethod
     def load_model(model_path)->YOLO:
@@ -29,9 +28,8 @@ class VegiDetect:
         bboxes = result[0].boxes.boxes
         imarr = cv2.imread(self.input_img_file_name)
         for id,box in enumerate(bboxes,start=1):
-            print(box)
             x1,y1,x2,y2,cof,cl = box
-            img_path =  os.path.join(self.crop_img_dir_name,f"{id}.jpg")
+            img_path =  os.path.join(self.crop_img_dir_name,f"frame_1_{id}_{self.classes[cl.item()]}.jpg")
             cv2.imwrite(img_path,imarr[int(y1):int(y2),int(x1):int(x2)])
 
 

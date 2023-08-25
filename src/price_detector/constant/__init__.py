@@ -31,6 +31,15 @@ class VegiDetectorKey:
     VEGI_DETECTOR_INPUT_FILE_NAME_KEY: str = "input_img_file_name"
     VEGI_DETECTOR_CROP_DIR_NAME_KEY: str = "crop_img_dir_name"
 
+
+@dataclass(frozen=True)
+class GetAreaKey:
+    GET_AREA_ROOT_KEY: str = "get_area"
+    GET_AREA_ROOT_DIR_KEY: str = "root_dir"
+    GET_AREA_CANNY_IMAGE_FILE_NAME_KEY: str = "canny_image_file_name"
+    GET_AREA_DIALLATE_IMAGE_FILE_NAME_KEY: str = "dillate_image_file_name"
+    GET_AREA_ERODE_IMAGE_FILE_NAME_KEY: str = "erode_image_file_name"
+
     
 
 

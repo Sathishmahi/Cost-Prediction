@@ -1,6 +1,18 @@
 from collections import namedtuple
 
 
+GetAreaConfig = namedtuple("GetAreaConfig", [
+    
+    "root_dir",
+    "canny_image_file_name",
+    "dillate_image_file_name",
+    "erode_image_file_name",
+    "crop_images_dir_name"
+
+]
+    
+)
+
 DownloadModelConfig = namedtuple("DownloadModelConfig", 
                         [
                             "root_dir",

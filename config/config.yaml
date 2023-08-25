@@ -11,3 +11,11 @@ vegi_detector:
   root_dir: vegi_detector
   input_img_file_name: input.jpg
   crop_img_dir_name: crop_imgs
+
+get_area:
+  root_dir: get_area
+  canny_image_file_name: canny.jpg
+  dillate_image_file_name: dillate.jpg
+  erode_image_file_name: erode.jpg
+
+
